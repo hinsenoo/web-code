@@ -1,0 +1,289 @@
+@font-face{
+    font-family: pixel-font;
+    src: url(../font/pixel-font.ttf);
+}
+
+*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+#main{
+    background:url(../imgs/background/homePage.png);
+    background-size: 100% 100%;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+#title{
+    width:1000px;
+    height:400px;
+    filter:alpha(opacity=100);
+    opacity:1;
+    margin:30px auto;
+}
+
+#title #word{
+    width:800px;
+    height:350px;
+    margin:0 auto;
+}
+
+#word img{
+    
+    display: block;
+    opacity:0.5;
+}
+
+#word2{
+    margin:0 auto;
+    text-align: center;
+}
+
+#word2 h2{
+    text-shadow: 5px 2px 6px rgb(85, 58, 58);
+    letter-spacing: 10px;
+}
+
+
+#content{
+    width:1000px;
+    height:220px;
+    margin:0 auto;
+    margin-top:0px;
+}
+
+#content .box{
+    width: 180px;
+	height:150px;
+	float: left;
+    margin:0 76px;
+}
+#web,#server,#hacker{
+    opacity:1;
+}
+.box-web .icon{
+    margin:33px 0 10px 22px;
+    width:160px;
+    height:120px;
+    display: block;
+    background:url(../imgs/icon/web.png) no-repeat;
+}
+
+.box-server .icon{
+    margin:15px 0 29px 22px;
+    width:160px;
+    height:120px;
+    display: block;
+    background:url(../imgs/icon/server2.png) no-repeat;
+}
+
+.box-hacker .icon{
+    margin:20px 0 23px 12px;
+    width:160px;
+    height:120px;
+    display: block;
+    background:url(../imgs/icon/hacker.png) no-repeat;
+}
+/*图标动画*/
+.box .icon{
+    -o-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s e;
+    transition: all 0.2s;
+}
+.box .icon:hover{
+    -o-transform:scale(1.2) rotate(360deg);
+    -webkit-transform:scale(1.2) rotate(360deg);
+    -moz-transform:scale(1.2) rotate(360deg);
+    transform:scale(1.2) rotate(360deg);
+}
+/*按钮属性*/
+.box .button{
+    margin:11px 5px 0px 10px;
+    width:150px;
+    height:45px;
+    display: block;
+    line-height: 45px;
+    border:2px solid rgba(0, 0, 0, 0.3);
+    color: #4c4747;
+    text-align:center;
+    text-decoration: none;
+    font-family: pixel-font;
+    font-size: 20px;
+    font-weight: 800;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.box .line{
+    display: block;
+    position: absolute;
+}
+/*滑入线条颜色*/
+.box-web .line{
+    background:#efa733;
+}
+
+.box-server .line{
+    background:#176bfa;
+}
+
+.box-hacker .line{
+    background:#860917;
+}
+/*
+    顶部线条  从左端移动到上边框
+    高度不变  2px
+    宽度      0-> 宽度150px+边框2px*2 ->154px
+*/
+.box .line-top{
+    width:0px;
+    height:3px;
+    top:-2px;
+    left:-70%;
+    transition:all 0.2s ease;   
+}
+
+.box .button:hover .line-top{
+    width:154px;
+    left:-2px;
+}
+/*
+    底部线条  从右端端移动到下边框
+    高度不变  2px
+    宽度      0-> 宽度150px+边框2px*2 ->154px
+*/
+.box .line-bottom{
+    width:0px;
+    height:3px;
+    bottom:-2px;
+    right:-70%;
+    transition:all 0.2s ease;   
+}
+
+.box .button:hover .line-bottom{
+    width:154px;
+    right:-2px;
+}
+/*
+    左部线条  从下端端移动到左边框
+    宽度  2px
+    高度      0-> 高度45px+边框2px*2 ->49px
+*/
+.box .line-left{
+    width:3px;
+    height:0px;
+    left:-2px;
+    bottom:-100%;
+    transition:all 0.2s ease;   
+}
+
+.box .button:hover .line-left{
+    height:45px;
+    bottom:0px;
+}
+/*
+    右部线条  从上端端移动到右边框
+    宽度  2px
+    高度      0-> 高度45px+边框2px*2 ->49px
+*/
+.box .line-right{
+    width:3px;
+    height:0px;
+    right:-2px;
+    top:-100%;
+    transition:all 0.2s ease;   
+}
+
+.box .button:hover .line-right{
+    height:45px;
+    top:0px;
+}
+/*填充底部空隙*/
+
+#filling{
+    width:100%;
+    height:90px;
+}
+
+/*底部弹窗*/
+#footer{
+    opacity:1;
+    width:100%;
+    height:0px;
+    margin:0 auto;
+    position: fixed;
+    bottom:0px;
+    background: red;
+}
+
+
+#pop{
+    width:500px;
+    height:400px;
+    margin:0 auto;
+    padding:10px;
+    border:2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px; 
+    background: rgba(167, 165, 165, 0.5);
+    position: relative;
+    bottom:0px;
+}
+
+#pop a{
+    text-decoration: none;
+    display: block;
+    width:70px;
+    height:80px;
+    margin:20px 26px 2px 14px;
+    padding: 0px 15px 25px 0px;
+    float: left;
+    line-height: 25px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    font-size:16px;
+}
+
+#pop a:hover{
+    box-shadow: 0 0 7px 4px #ccc;
+}
+
+#pop a em{
+    position: absolute;
+    top:15px;
+    left:2px;
+    display: inline-block;
+    width:100%;
+    text-align: center;
+    filter:alpha(opacity=100);
+    opacity:1;
+}
+#pop a p{
+    margin:60px 0 0 19px;
+}
+
+#pop #show{
+    display: block;
+    font-size:20px;
+    line-height:50px;
+    text-align: center;
+    width:100px;
+    height:50px;
+    border:2px solid rgba(255, 255, 255, 0.5);
+    border-bottom:2px solid rgba(171, 182, 177, 0.5);
+    background: rgba(167, 165, 165, 0.5);
+    border-radius: 25px 25px 0px 0px;
+    position: absolute;
+    top:-53px;
+    left:200px;
+}
+
